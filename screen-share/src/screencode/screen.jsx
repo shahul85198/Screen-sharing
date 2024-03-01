@@ -45,7 +45,7 @@ import React, { useRef, useEffect } from 'react';
     <div>
       <div style={{ width: '80%', background: 'grey', margin: 'auto' }}>
         <video ref={videoRef} autoPlay playsInline muted />
-      </div>
+      </div> 
       <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
       <button ref={startRef} className="btn btn-primary">
           Start Screen Sharing
