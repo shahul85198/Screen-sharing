@@ -4,10 +4,8 @@ import Screen from '../screencode/screen';
 
 
 export default function Develop() {
-  const [showScreen, setShowScreen] = useState(false);
 
   const onStartCapture = () => {
-    // Add any logic you want to execute when screen sharing starts
     console.log('Screen sharing started!');
   };
 
