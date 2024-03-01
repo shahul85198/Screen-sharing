@@ -4,10 +4,8 @@ import Screen from '../screencode/screen';
 
 
 export default function Develop() {
-  const [showScreen, setShowScreen] = useState(false);
 
   const onStartCapture = () => {
-    // Add any logic you want to execute when screen sharing starts
     console.log('Screen sharing started!');
   };
 
@@ -18,13 +16,7 @@ export default function Develop() {
        
         <h3>Create animated GIFs from a screen recording.</h3>
 
-        {!showScreen ? (
-          <button className="button" onClick={() => setShowScreen(true)}>
-            Start Screen Sharing
-          </button>
-        ) : (
-          <Screen onStartCapture={onStartCapture} />
-        )}
+        <Screen />
       </div>
     </div>
   );
