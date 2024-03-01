@@ -3,7 +3,7 @@ import React from 'react'
 export default function Develop(){
         return(
                 
-                <div class='id' > 
+        <div class='id' > 
 
                         
                        <div class ='key'>
