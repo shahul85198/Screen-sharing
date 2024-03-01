@@ -5,7 +5,7 @@ import Develop from './Edit/develope';
 
 function App() {
   return (
-    <Develop />
+   
   );
 }
 
