@@ -44,11 +44,10 @@ import React, { useRef, useEffect, useState } from 'react';
   //   };
   // }, []);
 
-  /* */
 
   return (
     <div>
-      {<div style={{ width: '80%', background: 'grey', margin: 'auto', display: showScreen ? 'block' : 'none' }}>
+      {<div style={{  background: 'grey', margin: 'auto', display: showScreen ? 'block' : 'none' }}>
         <video ref={videoRef} autoPlay playsInline muted />
       </div>
       <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
