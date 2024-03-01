@@ -8,4 +8,4 @@ const ScreenSharingButton = ({ onClick }) => {
   );
 };
 
-export default ScreenSharingButton;
+export default ScreenSharingButton; 
