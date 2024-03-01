@@ -18,13 +18,7 @@ export default function Develop() {
        
         <h3>Create animated GIFs from a screen recording.</h3>
 
-        {!showScreen ? (
-          <button className="button" onClick={() => setShowScreen(true)}>
-            Start Screen Sharing
-          </button>
-        ) : (
-          <Screen onStartCapture={onStartCapture} />
-        )}
+        <Screen />
       </div>
     </div>
   );
