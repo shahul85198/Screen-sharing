@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 
-function Screen() {
+  function Screen() {
   const videoRef = useRef(null);
-  const startRef = useRef(null);
+   const startRef = useRef(null);
   const stopRef = useRef(null);  
 
   const startCapture = () => {
@@ -47,7 +47,7 @@ function Screen() {
         <video ref={videoRef} autoPlay playsInline muted />
       </div>
       <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
-        <button ref={startRef} className="btn btn-primary">
+      <button ref={startRef} className="btn btn-primary">
           Start Screen Sharing
         </button>
         <button ref={stopRef} className="btn btn-secondary">
