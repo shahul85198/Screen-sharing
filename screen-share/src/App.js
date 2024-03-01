@@ -1,12 +1,18 @@
-import logo from './logo.svg';
+
+import Screen from './screencode/screen';
 import './App.css';
 import Develop from './Edit/develope';
 
 
 function App() {
   return (
-      <Develop />
+
+    <div className="App">
+       <Develop />
+      <Screen />
+    </div>
+
   );
 }
 
-export default App;
+export default App
