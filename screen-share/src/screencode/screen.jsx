@@ -49,7 +49,7 @@ import React, { useRef, useEffect, useState } from 'react';
     <div>
       {<div style={{  background: 'grey', margin: 'auto', display: showScreen ? 'block' : 'none' }}>
         <video ref={videoRef} autoPlay playsInline muted />
-      </div>
+      </div> }
       <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
       {!showScreen && <button onClick={startCapture} ref={startRef} className="btn btn-primary">
           Start Screen Sharing
