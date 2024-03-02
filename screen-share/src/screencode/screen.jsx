@@ -47,9 +47,10 @@ function Screen() {
     <div>
       {recordedVideoBlob && (
         <div
-          style={{ backgroundColor: 'grey', margin: 'auto', display: 'block' }}
+          style={{ width:'1000px' }}
         >
           <video
+            style ={{ width:'1000px'}}
             ref={videoRef}
             autoPlay
             playsInline
@@ -62,6 +63,7 @@ function Screen() {
         !recordedVideoBlob && ( 
           <div
             style={{
+              
               backgroundColor: 'grey',
               margin: 'auto',
               display: 'block',
@@ -70,12 +72,12 @@ function Screen() {
             <video ref={videoRef} autoPlay playsInline muted />
           </div>
         )}
-      <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
+      <div style={{ width: '80%', margin: 'auto', }}>
         {!showScreen && (
           <button
             onClick={startCapture}
             ref={startRef}
-            className="btn btn-primary"
+            className="button-start"
           >
             Start Screen Sharing
           </button>
@@ -84,7 +86,7 @@ function Screen() {
           <button
             onClick={stopCapture}
             ref={stopRef}
-            className="btn btn-secondary"
+            className="button-stop"
           >
             Stop
           </button>
