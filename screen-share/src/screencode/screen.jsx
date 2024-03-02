@@ -47,14 +47,14 @@ import React, { useRef, useEffect, useState } from 'react';
 
   return (
     <div>
-      {<div style={{  background: 'grey', margin: 'auto', display: showScreen ? 'block' : 'none' }}>
-        <video ref={videoRef} autoPlay playsInline muted />
+      {<div style={{ backgroundcolor: 'gery', margin: 'auto', display: showScreen ? 'block' : 'none' }}>
+        <video style={{width:'1000px'}} ref={videoRef} autoPlay playsInline muted />
       </div> }
-      <div style={{ width: '80%', margin: 'auto', paddingTop: 10 }}>
-      {!showScreen && <button onClick={startCapture} ref={startRef} className="btn btn-primary">
+      <div >
+      {!showScreen && <button className='button-start' onClick={startCapture} ref={startRef} >
           Start Screen Sharing
-        </button>}
-        {showScreen && <button onClick={stopCapture} ref={stopRef} className="btn btn-secondary">
+        </button>} 
+        {showScreen && <button className='button-stop' onClick={stopCapture} ref={stopRef} >
           Stop
         </button>}
       </div>
