@@ -15,10 +15,8 @@ export default function Develop() {
         <h1  >Screen recording</h1>
       
         <h3 >Create animated GIFs from a screen recording.</h3>
-        
           <Screen/>
         </div>
-       
       </div>
   );
 }
