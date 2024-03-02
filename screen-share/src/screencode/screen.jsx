@@ -22,14 +22,14 @@ function Screen() {
       const chunks = [];
       recorder.ondataavailable = (e) => chunks.push(e.data);
       recorder.onstop = () => {
-        const blob = new Blob(chunks, { type: 'video/webm' }); // Ensure correct video format
+        const blob = new Blob(chunks, { type: 'video/webm' }); 
         setRecordedVideoBlob(blob);
-        stream.getTracks().forEach((track) => track.stop()); // Stop all tracks
+        stream.getTracks().forEach((track) => track.stop()); 
       };
 
       recorder.start();
     } catch (err) {
-      console.error(err); // Handle potential errors
+      console.error(err); 
     }
   };
 
@@ -37,7 +37,6 @@ function Screen() {
     setShowScreen(false);
 
     if (recordedVideoBlob) {
-      // Handle recorded video here (download, display, etc.)
       console.log('Recorded video: ', recordedVideoBlob);
     } else {
       console.log('No video recorded yet.');
@@ -46,7 +45,7 @@ function Screen() {
 
   return (
     <div>
-      {recordedVideoBlob && ( // Display recorded video if available
+      {recordedVideoBlob && (
         <div
           style={{ backgroundColor: 'grey', margin: 'auto', display: 'block' }}
         >
@@ -60,7 +59,7 @@ function Screen() {
         </div>
       )}
       {showScreen &&
-        !recordedVideoBlob && ( // Display live preview while recording
+        !recordedVideoBlob && ( 
           <div
             style={{
               backgroundColor: 'grey',
