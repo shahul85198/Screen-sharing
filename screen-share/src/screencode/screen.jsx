@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from 'react';
 
 function Screen() {
@@ -7,7 +6,8 @@ function Screen() {
   const stopRef = useRef(null);
   const [showScreen, setShowScreen] = useState(false);
   const [recordedVideoBlob, setRecordedVideoBlob] = useState(null);
-
+  const [recording, setRecording] = useState(false); 
+  
   const startCapture = async () => {
     try {
       setShowScreen(true);
@@ -18,18 +18,23 @@ function Screen() {
 
       videoRef.current.srcObject = stream;
 
+     
+      setRecordedVideoBlob(null);
+      setRecording(true);
+
       const recorder = new MediaRecorder(stream);
       const chunks = [];
       recorder.ondataavailable = (e) => chunks.push(e.data);
       recorder.onstop = () => {
-        const blob = new Blob(chunks, { type: 'video/webm' }); 
+        const blob = new Blob(chunks, { type: 'video/webm' });
         setRecordedVideoBlob(blob);
-        stream.getTracks().forEach((track) => track.stop()); 
+        stream.getTracks().forEach((track) => track.stop());
+        setRecording(false); 
       };
 
       recorder.start();
     } catch (err) {
-      console.error(err); 
+      console.error(err);
     }
   };
 
@@ -46,11 +51,9 @@ function Screen() {
   return (
     <div>
       {recordedVideoBlob && (
-        <div
-          style={{ width:'1000px' }}
-        >
+        <div style={{ width: '1000px' }}>
           <video
-            style ={{ width:'1000px'}}
+            style={{ width: '1000px' }}
             ref={videoRef}
             autoPlay
             playsInline
@@ -59,20 +62,18 @@ function Screen() {
           />
         </div>
       )}
-      {showScreen &&
-        !recordedVideoBlob && ( 
-          <div
-            style={{
-              
-              backgroundColor: 'grey',
-              margin: 'auto',
-              display: 'block',
-            }}
-          >
-            <video ref={videoRef} autoPlay playsInline muted />
-          </div>
-        )}
-      <div style={{ width: '80%', margin: 'auto', }}>
+      {showScreen && !recordedVideoBlob && (
+        <div
+          style={{
+            backgroundColor: 'grey',
+            margin: 'auto',
+            display: 'block',
+          }}
+        >
+          <video ref={videoRef} autoPlay playsInline muted />
+        </div>
+      )}
+      <div style={{ width: '80%', margin: 'auto' }}>
         {!showScreen && (
           <button
             onClick={startCapture}
@@ -87,6 +88,7 @@ function Screen() {
             onClick={stopCapture}
             ref={stopRef}
             className="button-stop"
+            disabled={recording}
           >
             Stop
           </button>
