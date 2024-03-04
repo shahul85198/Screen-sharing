@@ -59,7 +59,7 @@ function Screen() {
   return (
     <div>
       {recordedVideoBlob && (
-        <div style={{ width: '1000px', position: 'relative' }}>
+        <div style={{ width: '1000px' }}>
           <video
             style={{ width: '1000px' }}
             ref={videoRef}
