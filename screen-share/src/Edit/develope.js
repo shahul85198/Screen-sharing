@@ -10,13 +10,18 @@ export default function Develop() {
   };
 
   return (
-    <div  >
+    <div>
       <div className='key'>
-        <h1  >Screen recording</h1>
-        <h3 >Create animated GIFs from a screen recording.</h3>
-          <Screen/>
+        <h1>Screen recording</h1>
         </div>
-
+        
+        <div className ='h1'>
+        <h3>Create animated GIFs from a screen recording.</h3> 
+        <h3>Client-side only, no data is uploaded. Modern browser required.</h3>
+            
+        <Screen />   
+        </div>
+    
         
       </div>
   );
