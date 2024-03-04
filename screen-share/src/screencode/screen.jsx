@@ -49,7 +49,8 @@ function Screen() {
   };
 
   return (
-    <div>
+    <div >
+    <div >
       {recordedVideoBlob && (
         <div style={{ width: '1000px' }}>
           <video
@@ -95,6 +96,7 @@ function Screen() {
         )}
       </div>
     </div>
+  </div>
   );
 }
 
